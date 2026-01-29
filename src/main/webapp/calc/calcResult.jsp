@@ -13,5 +13,6 @@
 <body>
     <h2>num1 : ${param.num1}</h2>
     <h2>num2 : ${param.num2}</h2>
+<h3>합 : ${Integer.parseInt(param.num1) + Integer.parseInt(param.num2)}</h3>
 </body>
 </html>
