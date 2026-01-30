@@ -15,6 +15,9 @@ public class MenuInputController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+
+        resp.setContentType("text/html;charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         // 순서1, 요청이 잘 왔는지 확인.
         System.out.println("MenuInputController doGet  메서드, 요청이 잘 도착했습니다. ");
         // 순서2, 실제로, 어느 화면으로 갈지를 정해주는 기능.
