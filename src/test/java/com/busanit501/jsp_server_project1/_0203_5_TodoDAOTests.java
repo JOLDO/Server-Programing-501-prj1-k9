@@ -73,5 +73,24 @@ public class _0203_5_TodoDAOTests {
 
     }
 
+    //수정
+    @Test
+    public void testUpdateOne() throws Exception {
+        // 수정할 tno 번호를 알고 있음.
+        // 수정할 데이터도 가지고 있음.
+        // 화면으로부터, 수정할 데이터를 받아서 작업을 할 예정.
+        // 임시 데이터 생성.
+        _0203_1_TodoVO todoVO = _0203_1_TodoVO.builder()
+                .tno(4L)
+                .title("수정 테스트")
+                .dueDate(LocalDate.of(2026,2,2))
+                .finished(true)
+                .build();
+
+        todoDAO.updateOne(todoVO);
+
+
+    }
+
 
 }
