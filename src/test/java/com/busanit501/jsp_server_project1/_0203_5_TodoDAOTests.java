@@ -62,5 +62,16 @@ public class _0203_5_TodoDAOTests {
 
     }
 
+    // 하나 조회
+    @Test
+    public void testSelectOne() throws Exception {
+        // 조회할 tno 를 알고 있음.
+        Long tno = 4L;
+        // 조회
+        _0203_1_TodoVO todoVO = todoDAO.selectOne(tno);
+        System.out.println("하나 조회 결과 : " + todoVO);
+
+    }
+
 
 }
