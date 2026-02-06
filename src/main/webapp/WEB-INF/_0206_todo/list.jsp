@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <a href="/todo/register_0205">글쓰기</a>
+    <a href="/todo/register_0206">글쓰기</a>
 </div>
 <div>
     <h2>서블릿 컨텍스트에 저장된 데이터 불러와서, 화면에 표현해보기.</h2>
@@ -21,7 +21,7 @@
      <c:forEach var="dto" items="${dtoList}">
          <li>
              <span>${dto.tno}</span>
-             <span><a href="/todo/read_0205?tno=${dto.tno}">${dto.title}</a></span>
+             <span><a href="/todo/read_0206?tno=${dto.tno}">${dto.title}</a></span>
              <span>${dto.dueDate}</span>
              <span>${dto.finished ? "완료" : "미완료"}</span>
          </li>

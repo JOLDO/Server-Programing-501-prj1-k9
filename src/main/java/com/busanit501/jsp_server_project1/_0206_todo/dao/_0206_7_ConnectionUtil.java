@@ -7,14 +7,14 @@ import lombok.extern.log4j.Log4j2;
 import java.sql.Connection;
 
 @Log4j2
-public enum _0205_9_ConnectionUtil {
+public enum _0206_7_ConnectionUtil {
 
     INSTANCE;
 
     private HikariDataSource ds; // DB 연결하는 도구.
 
     // 생성자
-    _0205_9_ConnectionUtil() {
+    _0206_7_ConnectionUtil() {
         // HikariConfig 클래스 이용해서, 옵션 설정.
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.mariadb.jdbc.Driver");

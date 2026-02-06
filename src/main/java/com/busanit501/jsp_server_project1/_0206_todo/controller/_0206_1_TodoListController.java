@@ -1,7 +1,7 @@
 package com.busanit501.jsp_server_project1._0206_todo.controller;
 
-import com.busanit501.jsp_server_project1._0206_todo.dto._0205_2_TodoDTO;
-import com.busanit501.jsp_server_project1._0206_todo.service._0205_1_TodoService;
+import com.busanit501.jsp_server_project1._0206_todo.dto._0206_6_TodoDTO;
+import com.busanit501.jsp_server_project1._0206_todo.service._0206_2_TodoService;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletContext;
@@ -23,7 +23,7 @@ public class _0206_1_TodoListController extends HttpServlet {
     // 정답 : 2) 이용.
 
     // 서비스의 기능을 가지고 있는 클래스 이용 : _0204_4_TodoService
-    private _0205_1_TodoService todoService = _0205_1_TodoService.INSTANCE;
+    private _0206_2_TodoService todoService = _0206_2_TodoService.INSTANCE;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -47,7 +47,7 @@ public class _0206_1_TodoListController extends HttpServlet {
 
 
             // 서비스의 도움을 받아서, DB로 데이터를 가져오기.
-            List<_0205_2_TodoDTO> dtoList = todoService.listAll();
+            List<_0206_6_TodoDTO> dtoList = todoService.listAll();
             // 서버에서, 객체에 담아서, 결과 화면에 전달.
             req.setAttribute("dtoList", dtoList);
             // 결과 화면으로 안내.

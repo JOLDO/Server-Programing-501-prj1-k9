@@ -1,7 +1,7 @@
 package com.busanit501.jsp_server_project1._0206_todo.controller;
 
-import com.busanit501.jsp_server_project1._0206_todo.dto._0205_2_TodoDTO;
-import com.busanit501.jsp_server_project1._0206_todo.service._0205_1_TodoService;
+import com.busanit501.jsp_server_project1._0206_todo.dto._0206_6_TodoDTO;
+import com.busanit501.jsp_server_project1._0206_todo.service._0206_2_TodoService;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
@@ -14,8 +14,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Log4j2
-@WebServlet(name="_0205_7_TodoRegController", urlPatterns = "/todo/register_0205")
-public class _0205_7_TodoRegController extends HttpServlet {
+@WebServlet(name="_0206_10_TodoRegController", urlPatterns = "/todo/register_0206")
+public class _0206_10_TodoRegController extends HttpServlet {
     // 2가지 기능을 제공
     // 1) 화면 제공, 2) 글쓰기 작업 수행.
 
@@ -24,7 +24,7 @@ public class _0205_7_TodoRegController extends HttpServlet {
     // 정답 : 2) 이용.
 
     // 서비스의 기능을 가지고 있는 클래스 이용 : _0204_4_TodoService
-    private _0205_1_TodoService todoService = _0205_1_TodoService.INSTANCE;
+    private _0206_2_TodoService todoService = _0206_2_TodoService.INSTANCE;
     // 시간의 포맷 형태를 변경하는 기능을 추가. HH : 24시간제 표기 , a(오전/오후) hh : 1 ~12시 나타냄.
 //    private final DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //    private final DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd a hh:mm:ss");
@@ -36,7 +36,7 @@ public class _0205_7_TodoRegController extends HttpServlet {
             throws ServletException, IOException {
 
         log.info("/todo/register, 글작성 폼 임시화면 get으로 요청 처리함. ");
-        req.getRequestDispatcher("/WEB-INF/_0205_todo/todoReg.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/_0206_todo/todoReg.jsp").forward(req,resp);
 
     }
 
@@ -53,7 +53,7 @@ public class _0205_7_TodoRegController extends HttpServlet {
         log.info("PRG 패턴으로 글쓰기 post 작업 후, 리다이렉트 목록 화면으로 이동하기.");
 
         // 화면으로부터 전달받은 데이터를, -> DTO 객체 담아서, -> 서비스에 전달.
-        _0205_2_TodoDTO todoDTO = _0205_2_TodoDTO.builder()
+        _0206_6_TodoDTO todoDTO = _0206_6_TodoDTO.builder()
                 .title(req.getParameter("title"))
 //                .dueDate(req.getParameter("dueDate"))
                 .dueDate(LocalDate.parse(req.getParameter("dueDate"),DATEFORMATTER))
@@ -69,7 +69,7 @@ public class _0205_7_TodoRegController extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("/todo/list_0205");
+        resp.sendRedirect("/todo/list_0206");
 
     }
 
