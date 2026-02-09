@@ -38,4 +38,20 @@ public class _0209_19_MemberDAO {
                 .build();
         return memberVO;
     }
+
+    // 자동로그인 기능 추가 0209, 순서4
+    // 임시로 생성된 랜덤한 문자열을 업데이트 하는 기능.
+    public void updateUuid(String mid, String uuid) throws Exception {
+        // sql 문장 정의
+        String sql = "update tbl_member set uuid =? where mid = ?";
+        // DB 서버 연결 객체,
+        @Cleanup Connection connection = _0209_7_ConnectionUtil.INSTANCE.getConnection();
+        // sql 문장 담을 객체
+        @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        // sql 업데이트할 데이터 넣기 작업
+        preparedStatement.setString(1, uuid);
+        preparedStatement.setString(2, mid);
+        // sql를 전달하기.
+        preparedStatement.executeUpdate();
+    }
 }

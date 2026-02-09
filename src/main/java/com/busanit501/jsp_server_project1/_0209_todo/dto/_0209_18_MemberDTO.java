@@ -14,4 +14,6 @@ public class _0209_18_MemberDTO {
     private String mid;
     private String mpw;
     private String mname;
+    // 자동로그인 기능 추가 0209, 순서3
+    private String uuid;
 }

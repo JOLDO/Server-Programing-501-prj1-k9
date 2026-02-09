@@ -25,4 +25,10 @@ public enum  _0209_21_MemberService {
         _0209_18_MemberDTO memberDTO = modelMapper.map(vo,_0209_18_MemberDTO.class);
         return memberDTO;
     }
+
+    // uuid  업데이트 기능 추가
+    // 자동로그인 기능 추가 0209, 순서5
+    public void updateUuid(String mid, String uuid) throws Exception {
+        dao.updateUuid(mid,uuid);
+    }
 }

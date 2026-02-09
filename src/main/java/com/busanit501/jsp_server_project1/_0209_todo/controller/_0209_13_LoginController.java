@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.UUID;
 
 @Log4j2
 @WebServlet(name="_0209_13_LoginController", urlPatterns = "/login_0209")
@@ -34,6 +35,17 @@ public class _0209_13_LoginController extends HttpServlet {
         // 화면에서, 전달받은 mid, mpw 정보를 가져오기. 무조건 문자열이다.
         String mid = req.getParameter("mid");
         String mpw = req.getParameter("mpw");
+
+        //===================================================================
+        // 자동로그인 기능 추가 0209, 순서1 , 화면에서, 체크를 한 경우, 결과 문자열 : "on"
+        String auto = req.getParameter("auto");
+        // 자동로그인 체크 여부의 상태 변수.
+        boolean rememberMe = auto != null && auto.equals("on");
+        if (rememberMe) {
+            //임시로 UUID 클래스를 이용해서, 랜덤한 문자열 생성.
+            String uuid = UUID.randomUUID().toString();
+        }
+        //===================================================================
 
         // 데이터베이스 로직처리로 변경, 이전 코드는 0206를 참고하기.
         try {
