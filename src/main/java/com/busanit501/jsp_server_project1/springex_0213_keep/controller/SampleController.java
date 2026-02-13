@@ -44,7 +44,7 @@ public class SampleController {
         log.info("데이터 수집 : dueDate : " + dueDate);
     }
 
-    // http://localhost:8080/ex3?dueDate=2026-02-13
+    // http://localhost:8080/ex4
     @GetMapping("/ex4")
     public void ex4(Model model) {
         log.info("ex4 ~~~");
