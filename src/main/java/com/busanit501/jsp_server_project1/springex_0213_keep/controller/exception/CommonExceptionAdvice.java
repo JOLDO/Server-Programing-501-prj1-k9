@@ -48,4 +48,14 @@ public class CommonExceptionAdvice {
         return result;
     }
 
+    //해결책3, 404 not found 페이지 예외처리.
+    // 주의 사항,
+    // 리턴 타입 : String 문자열
+    // return "custom404"; -> 해당 화면을 의미.
+    // /WEB-INF/views/custom404.jsp
+    // 화면을 리턴함.
+    public String notFound() {
+        return "custom404";
+    }
+
 }
