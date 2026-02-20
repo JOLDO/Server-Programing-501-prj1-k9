@@ -1,6 +1,7 @@
 package com.busanit501.jsp_server_project1.mapper;
 
 
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.domain.TodoVO;
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.time.LocalDate;
 
 @Log4j2 // 로그를 기록 하는데, 어떤 기준으로 하나요? 로그레벨
 // info, debug , warning
@@ -25,4 +28,14 @@ public class TodoMapperTests {
         log.info("시간 확인으로 마이바티스 임시 연결 확인 : " + todoMapper.getTime());
     }
 
+    @Test
+    public void testInsert() {
+        // 준비물, 화면에서 넘겨받은 TodoVO 있다고 가정, 또는 더미 데이터 준비.
+        TodoVO todoVO = TodoVO.builder()
+                .title("오늘 점심 뭐 먹죠?")
+                .dueDate(LocalDate.now())
+                .writer("이상용")
+                .build();
+        todoMapper.insert(todoVO);
+    }
 }
